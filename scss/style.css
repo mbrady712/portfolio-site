@@ -9312,8 +9312,10 @@ h6,
   height: 45px;
   padding-left: 0;
   padding-right: 0;
-  text-align: center;
   border-radius: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-control {
