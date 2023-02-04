@@ -254,21 +254,22 @@ h6,
 
 .portfolio-item .portfolio-btn {
     position: absolute;
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     border-radius: 4px;
     opacity: 0;
     transition: .5s;
+    background: rgba(40, 71, 106, .75);
+    color:#ffffff;
 }
 
-.portfolio-item:hover .portfolio-btn {
+.portfolio-item:hover .portfolio-btn{
     opacity: 1;
-    width: calc(100% - 60px);
-    height: calc(100% - 60px);
-    top: 30px;
-    left: 30px;
+    cursor: pointer;
 }
 
 .testimonial-carousel .owl-dots {
