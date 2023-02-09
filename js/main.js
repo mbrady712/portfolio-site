@@ -41,24 +41,6 @@
     }
 
 
-    // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
-    });
-
-
     // Scroll to Bottom
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -68,13 +50,27 @@
         }
     });
 
-
     // Skills
     $('.skill').waypoint(function () {
         $('.progress .progress-bar').each(function () {
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
     }, {offset: '80%'});
+
+    // Portfolio Descriptions
+        function generateHandlers (j){
+            $( "." + j).on( "click", function() {
+                console.log("hello");
+                $("#" + j).css("display", "block");
+            });
+
+            $( ".exit").on( "click", function() {
+                $("#" + j).css("display", "none");
+            });
+        }
+        for(var i = 1; i <= 6; i++){
+            generateHandlers(i);
+        }
     
     // Back to top button
     $(window).scroll(function () {
@@ -87,16 +83,6 @@
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
-    });
-
-
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        dots: true,
-        loop: true,
-        items: 1
     });
     
 })(jQuery);
