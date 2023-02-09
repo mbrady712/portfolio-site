@@ -521,32 +521,40 @@
                 <div class="col-lg-8">
                     <div class="contact-form text-center">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate" method="POST" data-netlify="true">
+                        <form name="sentMessage" id="contactForm" class="needs-validation" novalidate method="POST" data-netlify="true">
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
                                     <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
-                                        required="required" data-validation-required-message="Please enter your name" 
+                                        required data-validation-required-message="Please enter your name" 
                                         name="name"/>
-                                    <p class="help-block text-danger"></p>
+                                        <div class="invalid-feedback">
+                                            Please enter your name
+                                        </div>
                                 </div>
                                 <div class="control-group col-sm-6">
                                     <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
                                         required="required" data-validation-required-message="Please enter your email" 
                                         name="email"/>
-                                    <p class="help-block text-danger"></p>
+                                        <div class="invalid-feedback">
+                                            Please enter your email
+                                        </div>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
                                     required="required" data-validation-required-message="Please enter a subject" 
                                     name="subject"/>
-                                <p class="help-block text-danger"></p>
+                                    <div class="invalid-feedback">
+                                        Please enter a subject
+                                    </div>
                             </div>
                             <div class="control-group">
                                 <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
                                     required="required" name="message"
                                     data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
+                                    <div class="invalid-feedback">
+                                        Please enter your message
+                                    </div>
                             </div>
                             <div>
                                 <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send Message</button>
@@ -557,6 +565,26 @@
             </div>
         </div>
     </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>
     <!-- Contact End -->
 
 
@@ -591,9 +619,9 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    <!-- Contact Javascript File -->
+    <!-- Contact Javascript File 
     <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="mail/contact.js"></script> -->
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
