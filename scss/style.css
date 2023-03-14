@@ -9329,6 +9329,14 @@ h6,
     padding: 10px 0;
   }
 }
+@media screen and (max-width: 600px) {
+  .display-1 {
+    display: none;
+  }
+  .heading-container {
+    padding: 40px;
+  }
+}
 .typed-cursor {
   font-size: 45px;
   color: #ffffff;
