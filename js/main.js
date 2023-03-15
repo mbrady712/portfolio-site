@@ -41,15 +41,6 @@
     }
 
 
-    // Scroll to Bottom
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.scroll-to-bottom').fadeOut('slow');
-        } else {
-            $('.scroll-to-bottom').fadeIn('slow');
-        }
-    });
-
     // Skills
     $('.skill').waypoint(function () {
         $('.progress .progress-bar').each(function () {
@@ -58,32 +49,34 @@
     }, {offset: '80%'});
 
     // Portfolio Descriptions
-        function generateHandlers (j){
-            $( "." + j).on( "click", function() {
-                console.log("hello");
-                $("#" + j).css("display", "block");
-            });
+    function generateHandlers (j){
+        $( "." + j).on( "click", function() {
+            console.log("hello");
+            $("#" + j).css("display", "block");
+        });
 
-            $( ".exit").on( "click", function() {
-                $("#" + j).css("display", "none");
-            });
-        }
-        for(var i = 1; i <= 6; i++){
-            generateHandlers(i);
-        }
-    
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
+        $( ".exit").on( "click", function() {
+            $("#" + j).css("display", "none");
+        });
+    }
+    for(var i = 1; i <= 6; i++){
+        generateHandlers(i);
+    }
+
+    //Email and Phone obfuscation
+    var email1 ="michael"
+    var email2 ="brady712"
+    var email3 ="@gmail.com"
+    var email = email1 + email2 + email3;
+    $('.email').html(email);
+    $('.emailButton').attr("href", "mailto:" + email);
+
+    var phone1 ="410-"
+    var phone2 ="608"
+    var phone3 ="-8071"
+    var phone = phone1 + phone2 + phone3;
+    $('.phone').html(phone);
+    $('.phone').attr("href", "tel:" + phone);
     
 })(jQuery);
 
