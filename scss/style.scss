@@ -20,6 +20,9 @@ $enable-responsive-font-sizes: true;
 
 @import "bootstrap/scss/bootstrap";
 
+html {
+    scroll-behavior: smooth;
+  }
 
 h1,
 .font-weight-bolder {
@@ -128,21 +131,6 @@ h6,
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: $primary;
-}
-
-@media (max-width: 991.98px) {
-    .navbar-light .navbar-nav .nav-link {
-        padding: 10px 0;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .display-1{
-        display: none;
-    }
-    .heading-container{
-        padding: 40px;
-    }
 }
 
 .typed-cursor {
@@ -386,4 +374,26 @@ h6,
 
 .fgroup{
     margin: 15px 0 15px 0;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .display-1{
+        display: none;
+    }
+    .heading-container{
+        padding: 40px;
+    }
+    .overlay{
+        margin-left: -15px;
+        height: auto;
+    }
+    .overlay img:hover{
+        transform: none;
+    }
 }
