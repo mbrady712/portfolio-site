@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/******* Bootstrap Theming ********/ /*!
+/******* Bootstrap Theming ********/
+/*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
@@ -9505,7 +9506,7 @@ h6,
   position: absolute;
   display: none;
   width: 100%;
-  height: 90%;
+  min-height: 90%;
   margin-top: -5%;
   border-radius: 4px;
   padding: 5px;
@@ -9585,7 +9586,6 @@ h6,
   }
   .overlay {
     margin-left: -15px;
-    height: auto;
   }
   .overlay img:hover {
     transform: none;
