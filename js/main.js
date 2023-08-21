@@ -49,14 +49,19 @@
     }, {offset: '80%'});
 
     // Portfolio Descriptions
-    function generateHandlers (j){
-        $( "." + j).on( "click", function() {
-            console.log("hello");
-            $("#" + j).css("display", "block");
+    function generateHandlers (i){
+        $( "." + i).on( "click", function() {
+            $("#" + i).css("display", "block");
+            //Close all other open descriptions
+            for(var j = 1; j <= 6; j++){
+                if(j != i){
+                    $("#" + j).css("display", "none");
+                }
+            }
         });
 
         $( ".exit").on( "click", function() {
-            $("#" + j).css("display", "none");
+            $("#" + i).css("display", "none");
         });
     }
     for(var i = 1; i <= 6; i++){
